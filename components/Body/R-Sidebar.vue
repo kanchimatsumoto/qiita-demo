@@ -1,17 +1,18 @@
 <template>
+  <aside>
     <div class="r-sidebar">
-			<Advertisement />
-			<TableOfContents />
+      <mq-layout mq="md+">
+        <TableOfContents />
+      </mq-layout>
     </div>
+  </aside>
 </template>
 
 <script>
-import Advertisement from '@/components/body/Advertisement/Advertisement.vue'
-import TableOfContents from '@/components/body/TableOfContents/TableOfContents.vue';
+import TableOfContents from "@/components/body/TableOfContents/TableOfContents.vue";
 export default {
-	components: {
-		Advertisement,
-		TableOfContents
-	}
-}
+  components: {
+    TableOfContents,
+  },
+};
 </script>
