@@ -4,7 +4,7 @@ export default {
         title: 'qiita-demo',
         meta: [
             { charset: 'utf-8' },
-            { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+            { name: 'viewport', content: 'width=device-width, initial-scale=1, , minimum-scale=1, user-scalable=yes' },
             { hid: 'description', name: 'description', content: '' }
         ],
         link: [
@@ -14,7 +14,14 @@ export default {
 
     // Global CSS (https://go.nuxtjs.dev/config-css)
     css: [
+      '@/assets/css/ress.css'
     ],
+
+    styleResources: {
+      scss: [
+        '@/assets/scss/_mixin.scss',
+      ]
+    },
 
     // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
     plugins: [],
@@ -29,7 +36,19 @@ export default {
     ],
 
     // Modules (https://go.nuxtjs.dev/config-modules)
-    modules: ['@nuxtjs/style-resources'],
+  modules: [
+    '@nuxtjs/style-resources',
+    'nuxt-mq',
+  ],
+
+  'mq': {
+      defaultBreakpoint: 'sm',
+      breakpoints: {
+        sm: 768,
+        md: 1200,
+        pc: Infinity
+      }
+    },
 
     fontawesome: {
        imports: [

@@ -24,6 +24,8 @@
     "babel-jest": "^26.5.0",
     "jest": "^26.5.0",
     "node-sass": "^5.0.0",
+    "nuxt-mq": "^2.0.1",
+    "ress": "^3.0.0",
     "sass-loader": "^10.1.0",
     "vue-jest": "^3.0.4"
   }
