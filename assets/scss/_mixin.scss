@@ -1,0 +1,21 @@
+$bp-smartphone-portrait: 520px;
+$bp-tablet-portrait: 768px;
+$bp-tablet-landscape: 1024px;
+
+@mixin smartphone {
+  @media screen and (min-width:$bp-smartphone-portrait) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width:$bp-tablet-portrait) and (max-width:$bp-tablet-landscape) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media screen and (min-width:$bp-tablet-landscape) {
+    @content;
+  }
+}
