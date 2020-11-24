@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import TableOfContents from "@/components/body/TableOfContents/TableOfContents.vue";
+import TableOfContents from "@/components/Body/TableOfContents/TableOfContents.vue";
 export default {
   components: {
     TableOfContents,
