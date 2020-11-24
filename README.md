@@ -1,4 +1,7 @@
-# qiita-demo
+# 公開サイト
+[こちら](https://objective-galileo-ca9445.netlify.app/)
+
+# サイトの趣旨
 Qiitaを模写した勉強
 
 ## Build Setup
@@ -17,5 +20,3 @@ $ npm run start
 # generate static project
 $ npm run generate
 ```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
