@@ -28,6 +28,7 @@ export default {
     styleResources: {
       scss: [
         '@/assets/scss/_mixin.scss',
+        '@/assets/scss/_extend.scss',
       ]
     },
 
