@@ -1,13 +1,22 @@
 <template>
 	<div class ="actions l-sidebar__item">
+    <button class="item--stock">
+      <span class ="item--stock__button">STOCK</span>
+    </button>
 	</div>
 </template>
 
 <style lang="scss" scoped>
 .l-sidebar__item {
-	font-size: 3.2rem;
-	margin-right: 24px;
-	margin-bottom: 16px;
-	transition: color 0.1s ease-out, background-color 0.1s ease-out;
+	@extend .item-box;
+  @extend .margin;
+}
+
+.item--stock {
+  color: rgb(93, 112, 124);
+  background-color: #fff;
+  border: 2px solid rgb(93, 112, 124);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  @extend .side-icon;
 }
 </style>
