@@ -1,8 +1,8 @@
 <template>
 	<div class="article-content">
 		<div class="article-content-body">
-			<div>
-				<h2 class="article-content-fragment" id="css-architect">CSS設計とは</h2>
+			<div v-scroll-spy="{data: 'section'}">
+				<h1 class="article-content-fragment" id="css-architect">CSS設計とは</h1>
 				<p>ウェブサイトをパーツの集合体として考え、そのパーツごとに分けてCSSを考えること。CSSを記述する時のルールとなるもの。</p>
 				
 				<h2 class="article-content-fragment" id="multi-single">マルチクラス・シングルクラス</h2>

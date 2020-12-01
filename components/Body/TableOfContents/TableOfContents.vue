@@ -5,7 +5,7 @@
       />
     <div class="table-of-contents__topic">
       <div class="table-of-contens__topic--nav">
-        <ul>
+        <ul v-scroll-spy-active="{class: 'customActive'}">
           <li 
             v-for="(navItem, index) in navItems"
             :key="index"
@@ -35,6 +35,14 @@ export default {
         { id: "oocss", name: 'OOCSS' },
         { id: "bem", name: 'BEM' }
       ],
+      titles: [
+       'CSS設計',
+       'CSS設計とは',
+       'マルチシングルクラス',
+       '基本のCSS設計手法',
+       'OOCSS',
+       'BEM' 
+      ] 
     }
   },
 };
@@ -65,7 +73,7 @@ export default {
 }
 
 .customActive {
-  background-color: red;
+  background-color: #efefef;
   color: #333;
 }
 

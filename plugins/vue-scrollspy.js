@@ -1,3 +1,3 @@
 import Vue from 'vue';
-import Scrollspy from 'scrollspy-js';
+import Scrollspy from 'vue2-scrollspy';
 Vue.use(Scrollspy);
