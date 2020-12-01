@@ -1,17 +1,20 @@
 <template>
   <div class="table-of-contents">
-    <div class="table-of-contents__advertisement">
       <img
         src="https://tpc.googlesyndication.com/simgad/10418088791348985237?sqp=4sqPyQQrQikqJwhfEAEdAAC0QiABKAEwCTgDQPCTCUgAUAFYAWBfcAJ4AcUBLbKdPg&rs=AOga4qnuXzhbRclFKgA7fXSMY8FkB9qHWA"
       />
-    </div>
     <div class="table-of-contents__topic">
-      <div class="table-of-contens__topic__nav">
-        <ul>
-          <li>この記事について</li>
-          <li>はじめに</li>
-          <li>ここまでのまとめ</li>
-          <li>終わりに</li>
+      <div class="table-of-contens__topic--nav">
+        <ul v-scroll-spy-active="{class: 'customActive'}">
+          <li 
+            v-for="(navItem, index) in navItems"
+            :key="index"
+            :id="`spy-${navItem.name}`"
+            >
+            <nuxt-link v-scroll-to="`#${navItem.id}`" to>
+              {{ navItem.name }}
+            </nuxt-link>
+          </li>
         </ul>
       </div>
     </div>
@@ -19,46 +22,59 @@
 </template>
 
 <script>
-export default {};
+import _ from 'lodash';
+
+export default {
+  data() {
+    return {
+      navItems: [
+        { id: "css-architect", name: 'CSS設計' },
+        { id: "multi-single", name: 'CSS設計とは' },
+        { id: "multi-single", name: 'マルチシングルクラス' },
+        { id: "basic-css", name: '基本のCSS設計手法' },
+        { id: "oocss", name: 'OOCSS' },
+        { id: "bem", name: 'BEM' }
+      ],
+      titles: [
+       'CSS設計',
+       'CSS設計とは',
+       'マルチシングルクラス',
+       '基本のCSS設計手法',
+       'OOCSS',
+       'BEM' 
+      ] 
+    }
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 .table-of-contents {
-  grid-column: 3 / 4;
-  top: 0;
-  width: 300px;
-  max-height: 100vh;
-  box-sizing: inherit;
-  display: block;
-  will-change: transform;
-  &__advertisement {
-    margin-top: 16px;
-    box-sizing: inherit;
-    &img {
-      width: 300px;
-      height: 250px;
-      border: 0pt none;
-    }
+  margin-top: 16px;
+  &img {
+    width: 300px;
+    height: 250px;
+    border: 0pt none;
   }
   &__topic {
-    margin-top: 8px;
-    &__nav {
+    margin-top: 16px;
+    &--nav {
       overflow-y: auto;
       max-height: 70vh;
-      &ul {
+      & ul {
         list-style: none;
-        &li {
+        & li {
           list-style-type: none;
-          margin: 4px 0;
+          margin: 16px 0;
         }
       }
     }
   }
 }
 
-@include tablet {
-  .table-of-contents {
-  }
+.customActive {
+  background-color: #efefef;
+  color: #333;
 }
 
 @include pc {

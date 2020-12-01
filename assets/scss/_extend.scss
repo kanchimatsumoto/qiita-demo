@@ -1,0 +1,43 @@
+.item-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.side-icon {
+  font-size: 10px;
+  height: 100%;
+  width: 100%;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 100%;
+  outline: none;
+}
+
+.margin {
+	margin-right: 24px;
+	margin-bottom: 24px;
+}
+
+.sub-icon-wrapper {
+  margin-right: 34px;
+  margin-left: 6px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  position: relative;
+}
+
+.sub-icon {
+  width: 30px;
+  text-align: center;
+  font-size: inherit;
+  text-rendering: auto;
+}

@@ -1,3 +1,5 @@
+import webpack from 'webpack'
+
 const routerBase =
   process.env.DEPLOY_ENV === 'GH_PAGES'
     ? {
@@ -28,11 +30,15 @@ export default {
     styleResources: {
       scss: [
         '@/assets/scss/_mixin.scss',
+        '@/assets/scss/_extend.scss',
       ]
     },
 
     // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-    plugins: [],
+    plugins: [
+      '~plugins/vue-scrollto',
+      { src: '~/plugins/vue-scrollspy', ssr: false }
+    ],
 
     // Auto import components (https://go.nuxtjs.dev/config-components)
     components: true,
@@ -68,6 +74,13 @@ export default {
      },
 
     // Build Configuration (https://go.nuxtjs.dev/config-build)
-    build: {},
+    build: {
+      plugins: [
+        new webpack.ProvidePlugin({
+          // グローバルなモジュール
+          _: 'lodash'
+        })
+      ]
+    },
     ...routerBase
 }
