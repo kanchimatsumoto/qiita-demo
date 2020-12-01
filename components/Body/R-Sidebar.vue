@@ -1,11 +1,11 @@
 <template>
-  <aside>
     <div class="r-sidebar">
-      <mq-layout mq="md+">
-        <TableOfContents />
-      </mq-layout>
+      <aside>
+        <mq-layout mq="md+">
+          <TableOfContents />
+        </mq-layout>
+      </aside>
     </div>
-  </aside>
 </template>
 
 <script>
@@ -16,3 +16,14 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.r-sidebar {
+  position: sticky;
+  top: 0;
+  will-change: transform;
+  grid-column: 3 / 4;
+  width: 300px;
+  max-height: 100vh;
+}
+</style>
